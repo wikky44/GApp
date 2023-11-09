@@ -37,6 +37,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   http:
   animated_splash_screen: ^1.3.0
+  fluttertoast: ^8.1.1
+  intl:
+  flutter_otp_text_field: ^1.1.0+2
+  otp_text_field:
+
 
 dev_dependencies:
   flutter_test:

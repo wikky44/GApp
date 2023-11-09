@@ -1,7 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:grocerydashboard/screens/LoginSucces.dart';
+
+import 'Forgot_password.dart';
+import 'Signup_Page.dart';
+
+
 
 class LoginDemo extends StatefulWidget {
+
   @override
   _LoginDemoState createState() => _LoginDemoState();
 }
@@ -16,19 +23,16 @@ class _LoginDemoState extends State<LoginDemo> {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 100.0),
+              padding: const EdgeInsets.only(top: 250),
               child: Center(
                 child: Container(
-                    width: 200,
+                    width: 250,
                     height: 300,
-                    /*decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(50.0)),*/
                     child: Image.network('https://static.vecteezy.com/system/resources/previews/028/269/036/original/100-percent-pure-organic-logo-icon-natural-icon-pure-leaf-stamp-leaf-rounded-seal-free-vector.jpg')),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left:15.0,right: 15.0,top:152,bottom: 0),
+              padding: const EdgeInsets.only(left:15.0,right: 15.0,top:120,bottom: 0),
 
               child: TextField(
                 decoration: InputDecoration(
@@ -50,9 +54,8 @@ class _LoginDemoState extends State<LoginDemo> {
               ),
             ),
             TextButton(
-              onPressed: (){
-                //TODO FORGOT PASSWORD SCREEN GOES HERE
-              },
+              onPressed: (){  Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => Otp_page())); },
               child: Text(
                 'Forgot Password',
                 style: TextStyle(color: Colors.teal.shade900, fontSize: 15),
@@ -66,34 +69,21 @@ class _LoginDemoState extends State<LoginDemo> {
               child: TextButton(
                 onPressed: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => SignUp()));
+                      context, MaterialPageRoute(builder: (_) => Login_vaild()));
                 },
                 child: Text(
                   'Login',
                   style: TextStyle(color: Colors.white, fontSize: 25),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 130,
+            ), TextButton(onPressed: () {  Navigator.push(
+                context, MaterialPageRoute(builder: (_) => Signup())); }, child: Text('Signup'),
+
             ),
             Text('New User? Create Account')
           ],
         ),
       ),
     );
-  }
-}
-class SignUp extends StatefulWidget {
-  const SignUp({super.key});
-
-  @override
-  State<SignUp> createState() => _SignUpState();
-}
-
-class _SignUpState extends State<SignUp> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold();
   }
 }
